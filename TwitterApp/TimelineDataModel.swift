@@ -8,5 +8,6 @@
 import Foundation
 
 struct TimelineDataModel {
+    var username: String
     var text: String
 }

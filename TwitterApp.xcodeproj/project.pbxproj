@@ -17,6 +17,8 @@
 		1E30DFBB2B8F47FD00321959 /* TwitterAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DFBA2B8F47FD00321959 /* TwitterAppUITestsLaunchTests.swift */; };
 		1E30DFC82B90834A00321959 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DFC72B90834A00321959 /* HomeViewController.swift */; };
 		1E30DFCA2B909EB000321959 /* TimelineDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DFC92B909EB000321959 /* TimelineDataModel.swift */; };
+		1E30DFCD2B917E4000321959 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DFCB2B917E4000321959 /* MainTableViewCell.swift */; };
+		1E30DFCE2B917E4000321959 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E30DFCC2B917E4000321959 /* MainTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1E30DFBA2B8F47FD00321959 /* TwitterAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1E30DFC72B90834A00321959 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E30DFC92B909EB000321959 /* TimelineDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDataModel.swift; sourceTree = "<group>"; };
+		1E30DFCB2B917E4000321959 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		1E30DFCC2B917E4000321959 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				1E30DFA22B8F47FD00321959 /* LaunchScreen.storyboard */,
 				1E30DFA52B8F47FD00321959 /* Info.plist */,
 				1E30DFC72B90834A00321959 /* HomeViewController.swift */,
+				1E30DFCB2B917E4000321959 /* MainTableViewCell.swift */,
+				1E30DFCC2B917E4000321959 /* MainTableViewCell.xib */,
 				1E30DFC92B909EB000321959 /* TimelineDataModel.swift */,
 			);
 			path = TwitterApp;
@@ -236,6 +242,7 @@
 			files = (
 				1E30DFA42B8F47FD00321959 /* LaunchScreen.storyboard in Resources */,
 				1E30DFA12B8F47FD00321959 /* Assets.xcassets in Resources */,
+				1E30DFCE2B917E4000321959 /* MainTableViewCell.xib in Resources */,
 				1E30DF9F2B8F47FC00321959 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +272,7 @@
 				1E30DF982B8F47FC00321959 /* AppDelegate.swift in Sources */,
 				1E30DF9A2B8F47FC00321959 /* SceneDelegate.swift in Sources */,
 				1E30DFC82B90834A00321959 /* HomeViewController.swift in Sources */,
+				1E30DFCD2B917E4000321959 /* MainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
