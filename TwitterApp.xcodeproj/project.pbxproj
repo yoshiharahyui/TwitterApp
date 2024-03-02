@@ -19,6 +19,7 @@
 		1E30DFCA2B909EB000321959 /* TimelineDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DFC92B909EB000321959 /* TimelineDataModel.swift */; };
 		1E30DFCD2B917E4000321959 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DFCB2B917E4000321959 /* MainTableViewCell.swift */; };
 		1E30DFCE2B917E4000321959 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E30DFCC2B917E4000321959 /* MainTableViewCell.xib */; };
+		1E30DFD02B93305300321959 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30DFCF2B93305300321959 /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1E30DFC92B909EB000321959 /* TimelineDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDataModel.swift; sourceTree = "<group>"; };
 		1E30DFCB2B917E4000321959 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		1E30DFCC2B917E4000321959 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		1E30DFCF2B93305300321959 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				1E30DFCB2B917E4000321959 /* MainTableViewCell.swift */,
 				1E30DFCC2B917E4000321959 /* MainTableViewCell.xib */,
 				1E30DFC92B909EB000321959 /* TimelineDataModel.swift */,
+				1E30DFCF2B93305300321959 /* PostViewController.swift */,
 			);
 			path = TwitterApp;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E30DFD02B93305300321959 /* PostViewController.swift in Sources */,
 				1E30DFCA2B909EB000321959 /* TimelineDataModel.swift in Sources */,
 				1E30DF982B8F47FC00321959 /* AppDelegate.swift in Sources */,
 				1E30DF9A2B8F47FC00321959 /* SceneDelegate.swift in Sources */,
