@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var postButton: UIButton!
     var TimelineDataList: [TimelineDataModel] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class HomeViewController: UIViewController {
         //postButtonを丸くするコード
         postButton.layer.cornerRadius = 35
     }
+    
+    
     //floatingbuttonの作成
     var startingFrame : CGRect!
     var endingFrame : CGRect!
