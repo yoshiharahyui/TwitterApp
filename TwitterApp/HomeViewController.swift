@@ -13,8 +13,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var timelineDataList: [TimelineDataModel] = []
+    
     @IBOutlet weak var postButton: UIButton!
-    var TimelineDataList: [TimelineDataModel] = []
     
     
     override func viewDidLoad() {
@@ -53,13 +54,14 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //セルをテーブルに表示
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MainTableViewCell
-        //let timelineDataModel: TimelineDataModel = TimelineDataList[indexPath.row]
+        //遷移する際に遷移先にデータを表示するコード(データを送る）
+        _ = storyboard?.instantiateViewController(identifier: "PostViewController") as! PostViewController
         cell.username.text = "ユーザー名"
         cell.label.text = "テキスト"
         return cell

@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct TimelineDataModel {
-    var username: String
-    var text: String
+
+class TimelineDataModel: Object {
+    @objc dynamic var id: String = UUID().uuidString //データを一意に識別するための識別子
+    @objc dynamic var username: String = ""
+    @objc dynamic var text: String = ""
 }
