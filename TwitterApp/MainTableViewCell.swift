@@ -11,7 +11,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var label: UILabel!
     
-    var name: String = ""
+    //var name: String = ""
     
     
     override func awakeFromNib() {

@@ -7,16 +7,16 @@
 
 import Foundation
 import UIKit
-
+import RealmSwift
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var timelineDataList: [TimelineDataModel] = []
-    
     @IBOutlet weak var postButton: UIButton!
     
+    let postVC = PostViewController()
+    var timelineDataList: [TimelineDataModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,17 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         //postButtonを丸くするコード
         postButton.layer.cornerRadius = 35
+        tableView.delegate = self
+        postVC.delegate = self
+        setTimeLineData()
+        tableView.reloadData()
     }
     
+    func setTimeLineData() {
+        let realm = try! Realm()
+        let result = realm.objects(TimelineDataModel.self)
+        timelineDataList = Array(result)
+    }
     
     //floatingbuttonの作成
     var startingFrame : CGRect!
@@ -54,21 +63,34 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return timelineDataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //セルをテーブルに表示
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MainTableViewCell
-        //遷移する際に遷移先にデータを表示するコード(データを送る）
-        _ = storyboard?.instantiateViewController(identifier: "PostViewController") as! PostViewController
-        cell.username.text = "ユーザー名"
-        cell.label.text = "テキスト"
+        let timelineDataModel: TimelineDataModel = timelineDataList[indexPath.row]
+        cell.username.text = timelineDataModel.username
+        cell.label.text = timelineDataModel.text
+        //cell.username.text = timelineDataModel.text
         return cell
     }
     //セルの高さの可変
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.estimatedRowHeight = 50
+        tableView.estimatedRowHeight = 30
         return UITableView.automaticDimension
+    }
+}
+//delegateを受け取る側
+extension HomeViewController: PostDelegate {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let postVC = segue.destination as! PostViewController
+        postVC.delegate = self
+    }
+    
+    func newPost(username: String, text: String) {
+        self.tableView.reloadData()
+        print("投稿されました\(username)と\(text)")
     }
 }

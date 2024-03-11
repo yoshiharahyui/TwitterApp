@@ -10,8 +10,13 @@ import UIKit
 import RealmSwift
 
 
+protocol PostDelegate {
+    func newPost(username: String, text: String)
+}
+
 class PostViewController: UIViewController {
 
+    var  delegate: PostDelegate? //dele
     let realm = try! Realm()
 //遷移元へのキャンセルボタン
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -19,12 +24,13 @@ class PostViewController: UIViewController {
     }
     //投稿ボタン
     @IBAction func toPostButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
         var username: String
         var text: String
         username = addusername.text ?? ""
         text = textViewShow.text
         self.saveData(with: username, with: text)
-        print("\(username)")
+        delegate?.newPost(username: username, text: text)
     }
     
     @IBOutlet weak var addusername: UITextField!
@@ -36,17 +42,11 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let realm = try! Realm()
+        //let realm = try! Realm()
         setDoneButton()
         addusername.delegate = self
         textViewShow.delegate = self
     }
-    //データを受け入れるため(
-    func configure(timeline: TimelineDataModel) {
-        timelineData.username = timeline.username
-        timelineData.text = timeline.text
-            //print("データは\(text)と\(recordDate)です！")
-        }
     
     //キーボードを消すDoneボタン
     @objc func tapDoneButton() {
@@ -73,22 +73,7 @@ class PostViewController: UIViewController {
 }
 //データを変更したときにデータが上書きされていくためのコード
 extension PostViewController: UITextViewDelegate, UITextFieldDelegate {
-    //func textFieldDidChange(_ textField: UITextField) {
-        //let updatedName = addusername.text ?? ""
-        //let updatedText = textViewShow.text ?? ""
-        //saveData(with: updatedName, with: updatedText)
-    //}
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let updatedName = addusername.text ?? ""
-         let updatedText = textViewShow.text ?? ""
-         saveData(with: updatedName, with: updatedText)
-    }
-    func textViewDidChange(_ textView: UITextView) {
-       let updatedName = addusername.text ?? ""
-        let updatedText = textViewShow.text ?? ""
-        saveData(with: updatedName, with: updatedText)
-    }
+    //リターンを押すとキーボードがしまわれる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
