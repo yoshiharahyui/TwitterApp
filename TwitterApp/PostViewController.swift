@@ -16,7 +16,7 @@ protocol PostDelegate {
 
 class PostViewController: UIViewController {
 
-    var  delegate: PostDelegate? //dele
+    var  delegate: PostDelegate?
     let realm = try! Realm()
 //遷移元へのキャンセルボタン
     @IBAction func cancelButtonTapped(_ sender: Any) {

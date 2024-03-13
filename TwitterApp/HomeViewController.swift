@@ -27,7 +27,10 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         postVC.delegate = self
         setTimeLineData()
-        tableView.reloadData()
+        //tableView.reloadData()
+        //セルの可変
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func setTimeLineData() {
@@ -72,13 +75,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let timelineDataModel: TimelineDataModel = timelineDataList[indexPath.row]
         cell.username.text = timelineDataModel.username
         cell.label.text = timelineDataModel.text
-        //cell.username.text = timelineDataModel.text
         return cell
-    }
-    //セルの高さの可変
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.estimatedRowHeight = 30
-        return UITableView.automaticDimension
     }
 }
 //delegateを受け取る側
@@ -90,7 +87,12 @@ extension HomeViewController: PostDelegate {
     }
     
     func newPost(username: String, text: String) {
+        setTimeLineData()
         self.tableView.reloadData()
-        print("投稿されました\(username)と\(text)")
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.tableView.reloadData()
+//    }
 }

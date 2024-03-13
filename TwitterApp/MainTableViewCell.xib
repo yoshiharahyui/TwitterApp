@@ -18,28 +18,29 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="io1-tN-2Pc">
                         <rect key="frame" x="10" y="10" width="80" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="ZVJ-Iy-YTu"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テキスト" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isa-LR-qGz">
                         <rect key="frame" x="20" y="47" width="313" height="81"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="81" id="BjY-Yj-Lbj"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="io1-tN-2Pc" secondAttribute="trailing" constant="263" id="AwC-fM-o5a"/>
                     <constraint firstItem="isa-LR-qGz" firstAttribute="top" secondItem="io1-tN-2Pc" secondAttribute="bottom" constant="10" id="CcA-Y5-tTr"/>
-                    <constraint firstItem="isa-LR-qGz" firstAttribute="top" secondItem="io1-tN-2Pc" secondAttribute="bottom" constant="10" id="KcM-fB-kPe"/>
+                    <constraint firstItem="io1-tN-2Pc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JTj-BZ-aUa"/>
+                    <constraint firstItem="io1-tN-2Pc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Qi7-73-RlL"/>
                     <constraint firstItem="isa-LR-qGz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RVn-mn-dbJ"/>
                     <constraint firstItem="io1-tN-2Pc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fSK-lo-hdc"/>
                     <constraint firstAttribute="trailing" secondItem="io1-tN-2Pc" secondAttribute="trailing" constant="263" id="qfC-46-cGq"/>
                     <constraint firstAttribute="bottom" secondItem="isa-LR-qGz" secondAttribute="bottom" constant="10" id="r3P-hV-5D6"/>
-                    <constraint firstItem="io1-tN-2Pc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="v0l-LI-ubX"/>
                     <constraint firstAttribute="trailing" secondItem="isa-LR-qGz" secondAttribute="trailing" constant="20" id="x2R-yd-V5K"/>
                 </constraints>
             </tableViewCellContentView>
