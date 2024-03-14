@@ -33,10 +33,8 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="io1-tN-2Pc" secondAttribute="trailing" constant="263" id="AwC-fM-o5a"/>
                     <constraint firstItem="isa-LR-qGz" firstAttribute="top" secondItem="io1-tN-2Pc" secondAttribute="bottom" constant="10" id="CcA-Y5-tTr"/>
                     <constraint firstItem="io1-tN-2Pc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JTj-BZ-aUa"/>
-                    <constraint firstItem="io1-tN-2Pc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Qi7-73-RlL"/>
                     <constraint firstItem="isa-LR-qGz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RVn-mn-dbJ"/>
                     <constraint firstItem="io1-tN-2Pc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fSK-lo-hdc"/>
                     <constraint firstAttribute="trailing" secondItem="io1-tN-2Pc" secondAttribute="trailing" constant="263" id="qfC-46-cGq"/>

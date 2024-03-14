@@ -32,12 +32,12 @@ class PostViewController: UIViewController {
         self.saveData(with: username, with: text)
         delegate?.newPost(username: username, text: text)
     }
+    @IBOutlet weak var toPostButtonAction: UIBarButtonItem!
     
     @IBOutlet weak var addusername: UITextField!
     
     @IBOutlet weak var textViewShow: UITextView!
-    //var username: String = ""
-    //var text: String = ""
+
     var timelineData = TimelineDataModel()
     
     override func viewDidLoad() {
@@ -77,5 +77,12 @@ extension PostViewController: UITextViewDelegate, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        if textViewShow.text.count >= 141 {
+            toPostButtonAction.isEnabled = false
+        } else {
+            toPostButtonAction.isEnabled = true
+        }
     }
 }

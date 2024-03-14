@@ -133,6 +133,7 @@
                     <connections>
                         <outlet property="addusername" destination="kfj-1o-g41" id="FcW-Rt-cwW"/>
                         <outlet property="textViewShow" destination="Kx9-wl-gih" id="idl-VU-DSe"/>
+                        <outlet property="toPostButtonAction" destination="wEU-Bo-9AD" id="CNu-Ga-9IE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fO7-6B-etW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

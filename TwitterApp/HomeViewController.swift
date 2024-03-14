@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         postVC.delegate = self
         setTimeLineData()
-        //tableView.reloadData()
         //セルの可変
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableView.automaticDimension
@@ -77,6 +76,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.label.text = timelineDataModel.text
         return cell
     }
+    // Cell が選択された場合
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // セルの選択を解除
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 //delegateを受け取る側
 extension HomeViewController: PostDelegate {
@@ -85,14 +90,10 @@ extension HomeViewController: PostDelegate {
         let postVC = segue.destination as! PostViewController
         postVC.delegate = self
     }
-    
+
     func newPost(username: String, text: String) {
+        //投稿ボタンを押すとデータをリロードしてHomeViewControllerに表示する
         setTimeLineData()
         self.tableView.reloadData()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.tableView.reloadData()
-//    }
 }
