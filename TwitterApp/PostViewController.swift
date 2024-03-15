@@ -71,7 +71,7 @@ class PostViewController: UIViewController {
         print("確認\(timelineData)")
     }
 }
-//データを変更したときにデータが上書きされていくためのコード
+//データを変更したときにデータが上書きされていくためのコード!!
 extension PostViewController: UITextViewDelegate, UITextFieldDelegate {
     //リターンを押すとキーボードがしまわれる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
